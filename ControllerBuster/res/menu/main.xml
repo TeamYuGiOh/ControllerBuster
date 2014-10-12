@@ -3,10 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.controllerbuster.MainActivity" >
 
-    <item
-        android:id="@+id/action_settings"
+      <item
+        android:id="@+id/home"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never"/>
+        android:title="@string/home"
+        android:showAsAction="never"/>
+      
+      <item
+        android:id="@+id/controllers_map"
+        android:orderInCategory="200"
+        android:title="@string/controllers_map"
+        android:showAsAction="never"/>
+      
+      <item
+        android:id="@+id/facebook_share"
+        android:orderInCategory="200"
+        android:title="@string/facebook_share"
+        android:showAsAction="never"/>
 
 </menu>
