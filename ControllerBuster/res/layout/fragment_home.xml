@@ -4,10 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <fragment
-        android:name="com.example.controllerbuster.FragmentHome"
-        android:id="@+id/fragment_place"
-   		android:layout_width="match_parent"
-   		android:layout_height="match_parent" />
+    <ImageButton
+        android:id="@+id/bustButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/button" />
 
 </LinearLayout>

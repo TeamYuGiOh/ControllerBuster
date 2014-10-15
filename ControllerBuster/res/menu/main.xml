@@ -16,8 +16,14 @@
         android:showAsAction="never"/>
       
       <item
+        android:id="@+id/favourite_stops"
+        android:orderInCategory="300"
+        android:title="@string/favourite_stops"
+        android:showAsAction="never"/>
+      
+      <item
         android:id="@+id/facebook_share"
-        android:orderInCategory="200"
+        android:orderInCategory="400"
         android:title="@string/facebook_share"
         android:showAsAction="never"/>
 

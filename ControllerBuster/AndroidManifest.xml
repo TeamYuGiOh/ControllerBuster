@@ -76,12 +76,7 @@
         <!-- Google API Key -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAptlT-fGciHyP-_fh6RJuZsvSFmIrS-Oc" />
-
-        <activity
-            android:name=".FacebookActivity"
-            android:label="@string/title_activity_facebook" >
-        </activity>
+            android:value="@string/google_maps_id" />
     </application>
 
 </manifest>

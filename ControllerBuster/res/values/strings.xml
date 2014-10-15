@@ -3,10 +3,15 @@
 
     <string name="app_name">ControllerBuster</string>
     <string name="facebook_app_id">875306629147305</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="google_maps_id">AIzaSyAptlT-fGciHyP-_fh6RJuZsvSFmIrS-Oc</string>
+    
     <string name="home">Home</string>
     <string name="controllers_map">Controllers map</string>
-    <string name="title_activity_facebook">FacebookActivity</string>
+    <string name="favourite_stops">Favourite stops</string>
     <string name="facebook_share">Share on facebook</string>
+    
+    <string name="url_all_locations">http://netmonster.telerik-students.org/mobile/location/</string>
+    <string name="url_post_locations">http://netmonster.telerik-students.org/mobile/bust/</string>
+    <string name="url_nearby_controllers"></string>
 
 </resources>
