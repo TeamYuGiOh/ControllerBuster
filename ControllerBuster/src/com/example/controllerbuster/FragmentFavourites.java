@@ -19,6 +19,10 @@ public class FragmentFavourites extends ListFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		container.removeAllViews();
+//		if(getFragmentManager().findFragmentById(R.id.fragment_place) != null) {
+//		container.removeAllViews();
+//		}
 		context = this.getActivity().getApplicationContext();
 		datasource = new StopDataSource(context);
 		datasource.open();

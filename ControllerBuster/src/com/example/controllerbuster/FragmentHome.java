@@ -3,18 +3,17 @@ package com.example.controllerbuster;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.google.android.gms.fitness.data.DataSet;
-
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.SQLException;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
 public class FragmentHome extends Fragment implements IAsyncResponse,
 		IAlertDialogYesAction {
@@ -28,6 +27,10 @@ public class FragmentHome extends Fragment implements IAsyncResponse,
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+//		if(getFragmentManager().findFragmentById(R.id.fragment_place) != null) {
+//		container.removeAllViews();
+//		}
+		//((ViewGroup) FragmentHome.getParentFragment()).removeAllViews();
 		context = this.getActivity().getApplicationContext();
 		datasource = new StopDataSource(context);
 		mAlertMaker = new AlertDialogMaker(this);
@@ -41,9 +44,20 @@ public class FragmentHome extends Fragment implements IAsyncResponse,
 	}
 
 	private void initializeComponents(View v) {
+
+	//	RelativeLayout gameBoard = (RelativeLayout) v.findViewById(R.id.homeLayout);
 		final ImageButton bustButton = (ImageButton) v
 				.findViewById(R.id.bustButton);
 		// mBustButton.setImageResource(R.drawable.button);
+//		  ImageButton btnGreen = new ImageButton(context);
+//	        btnGreen.setImageResource(R.drawable.button);
+//	      // btnGreen.setLayoutParams(lp);
+//	       // btnGreen.setOnClickListener(mGreenBallOnClickListener);
+//	        btnGreen.setBackgroundColor(Color.TRANSPARENT); 
+//	      //  btnGreen.setTag(i);
+//	        btnGreen.setId(1);
+//
+//	                    gameBoard.addView(btnGreen);
 		bustButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
