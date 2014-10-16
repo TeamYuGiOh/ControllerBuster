@@ -20,7 +20,7 @@ public class HttpRequester extends AsyncTask<String, Void, String> {
 	@Override
 	protected String doInBackground(String... params) {
 		try {
-			String tag = "REQUESTS";
+			String tag = "HttpRequester";
 			String url = params[0];
 			String requestMethod = params[1];
 			URL obj = new URL(url);
