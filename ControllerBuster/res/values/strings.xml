@@ -11,7 +11,7 @@
     <string name="facebook_share">Share on facebook</string>
     
     <string name="url_all_locations">http://netmonster.telerik-students.org/mobile/location/</string>
-    <string name="url_post_locations">http://netmonster.telerik-students.org/mobile/bust/</string>
+    <string name="url_post_locations">http://netmonster.telerik-students.org/mobile/bust/index.php?</string>
     <string name="url_nearby_controllers"></string>
 
 </resources>

@@ -3,6 +3,9 @@ package com.example.controllerbuster;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ListView;
 
 public class FragmentFavourites extends ListFragment implements
 		IAlertDialogYesAction {
@@ -20,6 +24,7 @@ public class FragmentFavourites extends ListFragment implements
 	private Context mContext;
 	private StopAdapter mAdapter;
 	private AlertDialogMaker mAlertMaker;
+	private Fragment mNewMap = null;
 	private int[] imgResourses;
 	private Stop stopToDelete;
 

@@ -24,15 +24,10 @@ public class MainActivity extends Activity implements IAlertDialogYesAction{
 	protected void onCreate(Bundle savedInstanceState) {
 		//TODO make private variables with m
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
 		mAlertMaker = new AlertDialogMaker(this);
-
 		showActionBar();
 		checkConnectivity(this);
-
-		NotificationMaker notificationMaker = new NotificationMaker(mContext);
-		notificationMaker.MakeNotification("My notification test",
-				"test test test");
+		setContentView(R.layout.activity_main);
 	}
 	
 	@Override
@@ -52,8 +47,7 @@ public class MainActivity extends Activity implements IAlertDialogYesAction{
 			return true;
 		case R.id.controllers_map:
 			if (mNewMap == null) {
-				//TODO add real coordinates here
-				mNewMap = new FragmentGoogleMap(MainActivity.this, 42.69, 23.32);
+				mNewMap = new FragmentGoogleMap(MainActivity.this, 42.71, 23.25);
 			}
 			fragment = mNewMap;
 			changeFragments(fragment);

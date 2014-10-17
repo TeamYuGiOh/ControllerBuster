@@ -50,13 +50,11 @@ public class FragmentGoogleMap extends Fragment implements IAsyncResponse,
 				.getString(R.string.url_all_locations);
 		getStopsFromServer();
 		mAlertMaker = new AlertDialogMaker(this);
-		mNewMap = null;
 		try {
 			mNewMap = inflater.inflate(R.layout.fragment_map, container, false);
 		} catch (Exception e) {
 			e.printStackTrace(); 
-			Log.d("fuck this shit", e.getMessage() + " | " + e.getLocalizedMessage());
-			mAlertMaker.makeConfirmAlert(null, "Sorry, but we could not load the map!", "I'll live");
+			//ignore
 		}
 
 		initilizeMap();
@@ -69,13 +67,13 @@ public class FragmentGoogleMap extends Fragment implements IAsyncResponse,
 
 		mGoogleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
 
+		mGoogleMap.clear();
 		mGoogleMap.setMyLocationEnabled(false);
 		mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
 		mGoogleMap.getUiSettings().setMyLocationButtonEnabled(true);
 		mGoogleMap.getUiSettings().setCompassEnabled(true);
 		mGoogleMap.getUiSettings().setRotateGesturesEnabled(true);
 		mGoogleMap.getUiSettings().setZoomGesturesEnabled(true);
-
 		CameraPosition cameraPosition = new CameraPosition.Builder()
 				.target(new LatLng(latitude, longitude)).zoom(mZoom).build();
 		mGoogleMap.animateCamera(CameraUpdateFactory
@@ -145,8 +143,8 @@ public class FragmentGoogleMap extends Fragment implements IAsyncResponse,
 			return stops;
 		}
 		try {
-			JSONArray objArray = new JSONArray(//data);
-					"[{\"latitude\":\"43.8000\",\"longitude\":\"22.000\",\"busttime\":\"2014-10-16 21:12:36\",\"busstop\":\"Zapaden park\"},{\"latitude\":\"43.8111\",\"longitude\":\"22.1126\",\"busttime\":\"2014-10-16 21:12:14\",\"busstop\":\"Lulin\"},{\"latitude\":\"43.8321\",\"longitude\":\"22.8326\",\"busttime\":\"2014-10-16 21:11:22\",\"busstop\":\"Lulin\"}]");
+			JSONArray objArray = new JSONArray(data);
+					//"[{\"latitude\":\"43.8000\",\"longitude\":\"22.000\",\"busttime\":\"2014-10-16 21:12:36\",\"busstop\":\"Zapaden park\"},{\"latitude\":\"43.8111\",\"longitude\":\"22.1126\",\"busttime\":\"2014-10-16 21:12:14\",\"busstop\":\"Lulin\"},{\"latitude\":\"43.8321\",\"longitude\":\"22.8326\",\"busttime\":\"2014-10-16 21:11:22\",\"busstop\":\"Lulin\"}]");
 			for (int i = 0; i < objArray.length(); i++) {
 				String stopName = objArray.getJSONObject(i)
 						.getString("busstop");
