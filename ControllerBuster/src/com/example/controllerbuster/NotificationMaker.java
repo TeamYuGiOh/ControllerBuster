@@ -9,20 +9,20 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
 public class NotificationMaker {
-	private Context context;
+	private Context mContext;
 	
 	public NotificationMaker(Context context) {
-		this.context = context;
+		this.mContext = context;
 	}
 	
 	@SuppressLint("NewApi")
 	public void MakeNotification(String title, String text) {
 		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
-				this.context).setSmallIcon(R.drawable.ic_launcher)
+				this.mContext).setSmallIcon(R.drawable.ic_launcher)
 				.setContentTitle(title)
 				.setContentText(text);
-		Intent resultIntent = new Intent(context, MainActivity.class);
-		TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+		Intent resultIntent = new Intent(mContext, MainActivity.class);
+		TaskStackBuilder stackBuilder = TaskStackBuilder.create(mContext);
 		stackBuilder.addParentStack(MainActivity.class);
 		stackBuilder.addNextIntent(resultIntent);
 		PendingIntent resultPendingIntent =
@@ -32,7 +32,7 @@ public class NotificationMaker {
 		        );
 		mBuilder.setContentIntent(resultPendingIntent);
 		NotificationManager mNotificationManager = 
-				(NotificationManager) this.context.getSystemService(Context.NOTIFICATION_SERVICE);
+				(NotificationManager) this.mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 		mNotificationManager.notify(1, mBuilder.build());
 	}
 }

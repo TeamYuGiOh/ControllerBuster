@@ -11,7 +11,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class StopDataSource {
 
-	// Database fields
 	private SQLiteDatabase database;
 	private SQLiteHelper dbHelper;
 	private String[] allColumns = { SQLiteHelper.COLUMN_ID,
@@ -64,7 +63,6 @@ public class StopDataSource {
 			stops.add(stop);
 			cursor.moveToNext();
 		}
-		// make sure to close the cursor
 		cursor.close();
 		return stops;
 	}

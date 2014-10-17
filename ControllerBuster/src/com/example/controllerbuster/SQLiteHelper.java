@@ -16,7 +16,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
   private static final String DATABASE_NAME = "todos.db";
   private static final int DATABASE_VERSION = 1;
 
-  // Database creation sql statement
   private static final String DATABASE_CREATE = "create table "
       + TABLE_STOPS + "(" + COLUMN_ID + " integer primary key autoincrement, " +
 		  COLUMN_NAME + " text not null, " +

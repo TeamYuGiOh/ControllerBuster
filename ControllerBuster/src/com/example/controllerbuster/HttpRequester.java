@@ -21,17 +21,15 @@ public class HttpRequester extends AsyncTask<String, Void, String> {
 	protected String doInBackground(String... params) {
 		try {
 			String tag = "HttpRequester";
+			Log.d(tag, "in");
 			String url = params[0];
 			String requestMethod = params[1];
 			URL obj = new URL(url);
 			HttpURLConnection con = (HttpURLConnection) obj
 					.openConnection();
-			// optional default is GET
 			con.setRequestMethod(requestMethod);
 
-			// add request header
 			con.setRequestProperty("User-Agent", USER_AGENT);
-			Thread.sleep(1000);
 			if (requestMethod == "POST") {
 				con.setRequestProperty("Accept-Language", "en-US,en;q=0.5");
 				String urlParameters = params[2];

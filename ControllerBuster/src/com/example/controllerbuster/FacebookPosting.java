@@ -21,7 +21,6 @@ public class FacebookPosting {
 		facebook = new Facebook(FACEBOOK_APP_ID);
 	}
 
-	@SuppressWarnings("deprecation")
 	public void postToWall() {
 		facebook.dialog(this.context, "feed", new DialogListener() {
 
